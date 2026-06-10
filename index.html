@@ -5,123 +5,368 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anthony Gachihi | IT Professional</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 750px;
-      margin: 60px auto;
-      padding: 0 24px;
-      color: #333;
+      background-color: #050a0f;
+      color: #c8d8e8;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 16px;
       line-height: 1.7;
     }
-    h1 { font-size: 2rem; margin-bottom: 4px; }
-    .subtitle { color: #555; font-size: 1rem; margin-bottom: 6px; }
-    .contact { font-size: 0.9rem; color: #555; margin-bottom: 2rem; }
-    .contact a { color: #1a73e8; }
-    h2 {
-      font-size: 0.85rem;
+
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { color: #7dd3fc; text-decoration: underline; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 60px 24px; }
+
+    /* HERO */
+    .hero {
+      border-left: 3px solid #0ea5e9;
+      padding-left: 24px;
+      margin-bottom: 60px;
+    }
+    .hero-name {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: #f0f9ff;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+    }
+    .hero-name span {
+      color: #0ea5e9;
+    }
+    .hero-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.95rem;
+      color: #38bdf8;
+      margin: 8px 0 16px;
+      letter-spacing: 0.08em;
+    }
+    .hero-summary {
+      color: #94a3b8;
+      font-size: 1rem;
+      max-width: 680px;
+      line-height: 1.8;
+    }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.82rem;
+    }
+    .contact-links a {
+      color: #38bdf8;
+      border: 1px solid #0c4a6e;
+      padding: 4px 12px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .contact-links a:hover {
+      background: #0c4a6e;
+      text-decoration: none;
+    }
+
+    /* SECTIONS */
+    .section { margin-bottom: 52px; }
+    .section-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      color: #0ea5e9;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, #0c4a6e, transparent);
+    }
+
+    /* EXPERIENCE */
+    .job { margin-bottom: 28px; }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .job-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #e2f0ff;
+    }
+    .job-company { color: #38bdf8; }
+    .job-date {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.78rem;
+      color: #475569;
+    }
+    ul { list-style: none; padding: 0; }
+    ul li {
+      position: relative;
+      padding-left: 16px;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+    }
+    ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: #0ea5e9;
+      font-weight: 700;
+    }
+
+    /* SKILLS GRID */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .skill-card {
+      background: #0a1628;
+      border: 1px solid #0c4a6e;
+      border-radius: 4px;
+      padding: 12px 16px;
+    }
+    .skill-card-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #38bdf8;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: #1a73e8;
-      border-bottom: 1px solid #d0e3fa;
-      padding-bottom: 4px;
-      margin-top: 2rem;
+      margin-bottom: 6px;
     }
-    .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
-    .job-title { font-weight: bold; font-size: 0.95rem; }
-    .job-date { font-size: 0.85rem; color: #777; }
-    ul { padding-left: 20px; margin-top: 6px; }
-    li { margin-bottom: 4px; font-size: 0.92rem; }
-    .edu-item { margin-bottom: 8px; }
-    .edu-degree { font-weight: bold; font-size: 0.92rem; }
-    .edu-detail { font-size: 0.88rem; color: #555; }
-    .cert-item { font-size: 0.92rem; margin-bottom: 4px; }
+    .skill-card p {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    /* PROJECTS */
+    .project {
+      background: #0a1628;
+      border: 1px solid #0c4a6e;
+      border-left: 3px solid #0ea5e9;
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+    .project-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e2f0ff;
+      margin-bottom: 4px;
+    }
+    .project p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* EDUCATION */
+    .edu-item { margin-bottom: 16px; }
+    .edu-degree {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e2f0ff;
+    }
+    .edu-detail {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8rem;
+      color: #475569;
+      margin-top: 2px;
+    }
+    .gpa {
+      display: inline-block;
+      background: #0c4a6e;
+      color: #38bdf8;
+      font-size: 0.75rem;
+      padding: 1px 8px;
+      border-radius: 2px;
+      margin-left: 8px;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    /* CERTS */
+    .cert {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      padding: 8px 0;
+      border-bottom: 1px solid #0c2a3e;
+    }
+    .cert:last-child { border-bottom: none; }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #0c2a3e;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      color: #1e3a4e;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
+<div class="container">
 
-  <h1>Anthony Gachihi</h1>
-  <div class="subtitle">IT Professional | Fort Worth, TX</div>
-  <div class="contact">
-    817-714-1652 &nbsp;|&nbsp;
-    <a href="mailto:Aanthonygachihi5@gmail.com">Aanthonygachihi5@gmail.com</a> &nbsp;|&nbsp;
-    <a href="https://linkedin.com/in/anthony-gachihi-a37093264">LinkedIn</a> &nbsp;|&nbsp;
-    <a href="https://anthonygachihi-ux.github.io/my-portfolio/">Portfolio</a>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-name">Anthony <span>Gachihi</span></div>
+    <div class="hero-title">&gt; IT_PROFESSIONAL / FORT_WORTH_TX</div>
+    <p class="hero-summary">
+      Detail-oriented IT professional pursuing a Bachelor's in Information Technology at Tarleton State University,
+      with a 4.0 GPA Associate's in Cybersecurity. Experienced in Tier 1 technical support, hardware/software
+      troubleshooting, ticketing systems, and escalation procedures. Strong foundation in networking, Windows environments,
+      and structured problem-solving.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:Aanthonygachihi5@gmail.com">&#9993; email</a>
+      <a href="tel:8177141652">&#9990; 817-714-1652</a>
+      <a href="https://linkedin.com/in/anthony-gachihi-a37093264">&#11418; linkedin</a>
+      <a href="https://github.com/Anthonygachihi-ux">&#9903; github</a>
+      <a href="https://anthonygachihi-ux.github.io/my-portfolio/">&#9670; portfolio</a>
+    </div>
   </div>
 
-  <p style="font-size:0.92rem;">
-    Detail-oriented IT professional pursuing a Bachelor's in Information Technology at Tarleton State University,
-    with a 4.0 GPA Associate's in Cybersecurity. Experienced in Tier 1 technical support, hardware/software
-    troubleshooting, ticketing systems, and step-by-step user guidance. Proficient in Windows OS, Active Directory
-    concepts, PC hardware, printers, and peripherals. Known for clear communication, thorough documentation,
-    and strong customer service skills in high-volume environments.
-  </p>
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-label">Experience</div>
 
-  <h2>Experience</h2>
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">IT Support Technician <span class="job-company">@ Liberty Tax</span></div>
+        <div class="job-date">NOV 2025 – FEB 2026</div>
+      </div>
+      <ul>
+        <li>Provided remote Tier 1 technical support in a high-volume call center, assisting end users via phone and Zendesk.</li>
+        <li>Managed and resolved support tickets applying urgency and impact prioritization in line with ITIL framework principles.</li>
+        <li>Diagnosed and resolved issues related to Windows OS, software, printers, peripherals, and network connectivity.</li>
+        <li>Assisted users with password resets, account access, and basic system configuration.</li>
+        <li>Documented incidents, troubleshooting steps, and resolutions clearly to support knowledge sharing and escalations.</li>
+        <li>Followed structured escalation protocols to route incidents to appropriate teams within expected timeframes.</li>
+      </ul>
+    </div>
 
-  <div class="job-header">
-    <span class="job-title">IT Support Technician — Liberty Tax</span>
-    <span class="job-date">November 2025 – February 2026</span>
-  </div>
-  <ul>
-    <li>Provided Tier 1 technical support diagnosing Windows OS, software, printers, peripherals, and network connectivity issues.</li>
-    <li>Managed and resolved support tickets in Zendesk with clear documentation of incidents and resolutions.</li>
-    <li>Assisted users with password resets, account access, and system configuration via phone and email.</li>
-    <li>Applied ITIL-aligned escalation procedures to route complex issues to appropriate support groups.</li>
-    <li>Followed up with users to verify solutions effectively resolved reported problems.</li>
-  </ul>
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">AI Trainer <span class="job-company">@ Handshake AI</span></div>
+        <div class="job-date">SEP 2025 – PRESENT</div>
+      </div>
+      <ul>
+        <li>Trained and evaluated AI models by reviewing, labeling, and refining datasets for accuracy and relevance.</li>
+        <li>Identified inconsistencies, logical errors, and edge cases in AI-generated outputs.</li>
+        <li>Applied quality control standards to analyze data, identify errors, and improve system performance.</li>
+        <li>Analyzed and resolved data inconsistencies using established protocols to maintain high-quality results.</li>
+      </ul>
+    </div>
 
-  <div class="job-header" style="margin-top:1rem;">
-    <span class="job-title">AI Trainer (Remote/Contract) — Handshake AI</span>
-    <span class="job-date">September 2025 – Present</span>
-  </div>
-  <ul>
-    <li>Applied structured troubleshooting protocols and quality control standards to identify and resolve system inconsistencies.</li>
-    <li>Documented issues and resolutions clearly, supporting ongoing process improvement.</li>
-  </ul>
-
-  <div class="job-header" style="margin-top:1rem;">
-    <span class="job-title">Front-End Customer Service & Cashier — Walmart</span>
-    <span class="job-date">November 2019 – April 2025</span>
-  </div>
-  <ul>
-    <li>Delivered high-quality customer service with a 95%+ satisfaction rate in a fast-paced, high-volume environment.</li>
-    <li>Trained and mentored 10+ new associates on POS systems and customer service procedures.</li>
-    <li>Contributed to security protocol development, helping reduce store incidents by 15% during peak seasons.</li>
-  </ul>
-
-  <h2>Technical Skills</h2>
-  <ul>
-    <li><strong>Operating Systems:</strong> Windows OS (installation, configuration, troubleshooting); Linux fundamentals</li>
-    <li><strong>Hardware:</strong> PC troubleshooting, diagnostics, assembly; printers, scanners, peripherals, mobile devices</li>
-    <li><strong>Networking:</strong> TCP/IP, DNS, VPN troubleshooting, basic connectivity diagnostics</li>
-    <li><strong>Software:</strong> Microsoft Office Suite; Active Directory (academic); Zendesk</li>
-    <li><strong>Programming (beginner):</strong> Python, HTML, Java</li>
-  </ul>
-
-  <h2>Technical Projects</h2>
-  <ul>
-    <li><strong>Personal Portfolio Website:</strong> Built and deployed a live website using HTML and CSS, hosted on GitHub Pages.</li>
-    <li><strong>Custom PC Build:</strong> Researched, assembled, and configured a full desktop PC including OS installation, BIOS setup, and driver configuration.</li>
-    <li><strong>Python & Web Basics:</strong> Built foundational scripting skills in Python; practiced HTML structure and introductory Java.</li>
-  </ul>
-
-  <h2>Education</h2>
-  <div class="edu-item">
-    <div class="edu-degree">Bachelor of Applied Science (BAS), Information Technology</div>
-    <div class="edu-detail">Tarleton State University, Fort Worth, TX — Expected August 2026 | GPA: 3.5</div>
-  </div>
-  <div class="edu-item">
-    <div class="edu-degree">Associate of Applied Science (AAS), Cybersecurity</div>
-    <div class="edu-detail">Tarrant County College, Fort Worth, TX — August 2024 | GPA: 4.0</div>
-  </div>
-  <div class="edu-item">
-    <div class="edu-degree">Associate of Arts (AA)</div>
-    <div class="edu-detail">Tarrant County College, Fort Worth, TX — May 2023 | GPA: 3.5</div>
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Customer Service & Cashier <span class="job-company">@ Walmart</span></div>
+        <div class="job-date">NOV 2019 – APR 2025</div>
+      </div>
+      <ul>
+        <li>Delivered high-quality customer service with a 95%+ satisfaction rate in a fast-paced environment.</li>
+        <li>Trained and mentored 10+ new associates on POS systems, company policies, and customer service procedures.</li>
+        <li>Collaborated with leadership to implement security protocols, reducing store incidents by 15% during peak seasons.</li>
+        <li>Implemented process improvements that increased checkout efficiency and enhanced the customer experience.</li>
+      </ul>
+    </div>
   </div>
 
-  <h2>Certifications</h2>
-  <div class="cert-item">Cybersecurity Certificate — Chegg Skills (February 2024)</div>
-  <div class="cert-item">Foundations of User Experience (UX) Design — Google</div>
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-label">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-title">Operating Systems</div>
+        <p>Windows OS — install, config, troubleshoot. Linux fundamentals, command line navigation.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Hardware</div>
+        <p>PC assembly, diagnostics, troubleshooting. Printers, scanners, peripherals, mobile devices.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Networking</div>
+        <p>TCP/IP, DNS, VPN troubleshooting, basic connectivity diagnostics.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Software & Tools</div>
+        <p>Microsoft Office Suite, Active Directory, Zendesk ticketing system.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Programming</div>
+        <p>Python (beginner), HTML, Java. Currently expanding into JavaScript and SQL.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">UX & Design</div>
+        <p>User-centered design, accessibility, usability principles. Google UX Design certified.</p>
+      </div>
+    </div>
+  </div>
 
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-label">Projects</div>
+
+    <div class="project">
+      <div class="project-title">Personal Portfolio Website</div>
+      <p>Built and deployed a live portfolio using HTML and CSS, hosted on GitHub Pages. Includes full resume, skills, and contact information. <a href="https://anthonygachihi-ux.github.io/my-portfolio/">View live &#8599;</a></p>
+    </div>
+
+    <div class="project">
+      <div class="project-title">Custom PC Build</div>
+      <p>Researched, selected, and assembled a full desktop PC including CPU, GPU, motherboard, RAM, PSU, storage, and cooling. Installed OS, configured drivers, completed BIOS setup, and troubleshot for system stability.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-title">Python Scripting & Web Basics</div>
+      <p>Built foundational Python scripting skills including variables, loops, functions, and beginner automation. Practiced HTML page structure and introductory Java programming concepts.</p>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-label">Education</div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Bachelor of Applied Science — Information Technology <span class="gpa">GPA 3.5</span></div>
+      <div class="edu-detail">Tarleton State University / Fort Worth, TX / Expected Aug 2026</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-degree">Associate of Applied Science — Cybersecurity <span class="gpa">GPA 4.0</span></div>
+      <div class="edu-detail">Tarrant County College / Fort Worth, TX / Aug 2024</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-degree">Associate of Arts — Art <span class="gpa">GPA 3.5</span></div>
+      <div class="edu-detail">Tarrant County College / Fort Worth, TX / May 2023</div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section">
+    <div class="section-label">Certifications</div>
+    <div class="cert">Cybersecurity Certificate — Chegg Skills / Feb 2024</div>
+    <div class="cert">Foundations of User Experience (UX) Design — Google</div>
+  </div>
+
+  <div class="footer">// anthonygachihi-ux.github.io/my-portfolio &nbsp;|&nbsp; built with html & css</div>
+
+</div>
 </body>
 </html>
