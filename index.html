@@ -5,219 +5,232 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anthony Gachihi | IT Professional</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background-color: #050a0f;
-      color: #c8d8e8;
-      font-family: 'Rajdhani', sans-serif;
+      background-color: #080608;
+      color: #d4c8cc;
+      font-family: 'Inter', sans-serif;
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    a { color: #38bdf8; text-decoration: none; }
-    a:hover { color: #7dd3fc; text-decoration: underline; }
+    a { color: #c0392b; text-decoration: none; }
+    a:hover { color: #e74c3c; text-decoration: underline; }
 
-    .container { max-width: 860px; margin: 0 auto; padding: 60px 24px; }
+    .container { max-width: 880px; margin: 0 auto; padding: 64px 28px; }
 
     /* HERO */
     .hero {
-      border-left: 3px solid #0ea5e9;
-      padding-left: 24px;
-      margin-bottom: 60px;
+      border-left: 3px solid #7b1a1a;
+      padding-left: 28px;
+      margin-bottom: 64px;
     }
     .hero-name {
-      font-size: 3.2rem;
+      font-size: 3.4rem;
       font-weight: 700;
-      color: #f0f9ff;
-      letter-spacing: 0.04em;
+      color: #f5f0f0;
+      letter-spacing: 0.02em;
       line-height: 1.1;
     }
-    .hero-name span {
-      color: #0ea5e9;
-    }
+    .hero-name span { color: #c0392b; }
     .hero-title {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 0.95rem;
-      color: #38bdf8;
-      margin: 8px 0 16px;
-      letter-spacing: 0.08em;
+      font-size: 0.9rem;
+      color: #9b2222;
+      margin: 10px 0 18px;
+      letter-spacing: 0.1em;
     }
     .hero-summary {
-      color: #94a3b8;
-      font-size: 1rem;
-      max-width: 680px;
-      line-height: 1.8;
+      color: #a89a9e;
+      font-size: 1.05rem;
+      max-width: 700px;
+      line-height: 1.85;
     }
     .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 20px;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.82rem;
+      gap: 12px;
+      margin-top: 24px;
     }
     .contact-links a {
-      color: #38bdf8;
-      border: 1px solid #0c4a6e;
-      padding: 4px 12px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.82rem;
+      color: #c0392b;
+      border: 1px solid #4a1010;
+      padding: 6px 16px;
       border-radius: 2px;
-      transition: background 0.2s;
+      letter-spacing: 0.05em;
+      transition: background 0.2s, color 0.2s;
     }
     .contact-links a:hover {
-      background: #0c4a6e;
+      background: #2a0a0a;
+      color: #e74c3c;
       text-decoration: none;
     }
 
     /* SECTIONS */
-    .section { margin-bottom: 52px; }
+    .section { margin-bottom: 56px; }
     .section-label {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      color: #0ea5e9;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: #9b2222;
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
     .section-label::after {
       content: '';
       flex: 1;
       height: 1px;
-      background: linear-gradient(to right, #0c4a6e, transparent);
+      background: linear-gradient(to right, #4a1010, transparent);
     }
 
     /* EXPERIENCE */
-    .job { margin-bottom: 28px; }
+    .job { margin-bottom: 32px; }
     .job-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     .job-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #e2f0ff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #f0e8e8;
     }
-    .job-company { color: #38bdf8; }
+    .job-company { color: #c0392b; font-weight: 400; }
     .job-date {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 0.78rem;
-      color: #475569;
+      font-size: 0.8rem;
+      color: #5a3a3a;
     }
     ul { list-style: none; padding: 0; }
     ul li {
       position: relative;
-      padding-left: 16px;
-      color: #94a3b8;
-      font-size: 0.95rem;
-      margin-bottom: 5px;
+      padding-left: 18px;
+      color: #a89a9e;
+      font-size: 0.98rem;
+      margin-bottom: 6px;
+      line-height: 1.7;
     }
     ul li::before {
       content: '›';
       position: absolute;
       left: 0;
-      color: #0ea5e9;
+      color: #7b1a1a;
+      font-size: 1.1rem;
       font-weight: 700;
     }
 
     /* SKILLS GRID */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
     }
     .skill-card {
-      background: #0a1628;
-      border: 1px solid #0c4a6e;
+      background: #0f080a;
+      border: 1px solid #2a0f0f;
+      border-top: 2px solid #7b1a1a;
       border-radius: 4px;
-      padding: 12px 16px;
+      padding: 16px 18px;
     }
     .skill-card-title {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #38bdf8;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #c0392b;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
     }
     .skill-card p {
-      font-size: 0.88rem;
-      color: #94a3b8;
-      line-height: 1.5;
+      font-size: 0.93rem;
+      color: #a89a9e;
+      line-height: 1.6;
     }
 
     /* PROJECTS */
     .project {
-      background: #0a1628;
-      border: 1px solid #0c4a6e;
-      border-left: 3px solid #0ea5e9;
+      background: #0f080a;
+      border: 1px solid #2a0f0f;
+      border-left: 3px solid #7b1a1a;
       border-radius: 4px;
-      padding: 16px 20px;
-      margin-bottom: 12px;
+      padding: 18px 22px;
+      margin-bottom: 14px;
     }
     .project-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #e2f0ff;
-      margin-bottom: 4px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #f0e8e8;
+      margin-bottom: 6px;
     }
     .project p {
-      font-size: 0.9rem;
-      color: #94a3b8;
-      line-height: 1.6;
+      font-size: 0.95rem;
+      color: #a89a9e;
+      line-height: 1.7;
     }
 
     /* EDUCATION */
-    .edu-item { margin-bottom: 16px; }
+    .edu-item { margin-bottom: 20px; }
     .edu-degree {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #e2f0ff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #f0e8e8;
     }
     .edu-detail {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 0.8rem;
-      color: #475569;
-      margin-top: 2px;
+      font-size: 0.82rem;
+      color: #5a3a3a;
+      margin-top: 4px;
     }
     .gpa {
       display: inline-block;
-      background: #0c4a6e;
-      color: #38bdf8;
-      font-size: 0.75rem;
-      padding: 1px 8px;
+      background: #2a0a0a;
+      color: #c0392b;
+      font-size: 0.78rem;
+      padding: 2px 10px;
       border-radius: 2px;
-      margin-left: 8px;
+      margin-left: 10px;
       font-family: 'Share Tech Mono', monospace;
+      border: 1px solid #4a1010;
     }
 
     /* CERTS */
     .cert {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.85rem;
-      color: #94a3b8;
-      padding: 8px 0;
-      border-bottom: 1px solid #0c2a3e;
+      font-size: 0.97rem;
+      color: #a89a9e;
+      padding: 10px 0;
+      border-bottom: 1px solid #1a0a0a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cert::before {
+      content: '›';
+      color: #7b1a1a;
+      font-size: 1.1rem;
+      font-weight: 700;
     }
     .cert:last-child { border-bottom: none; }
 
     /* FOOTER */
     .footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #0c2a3e;
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid #1a0a0a;
       font-family: 'Share Tech Mono', monospace;
       font-size: 0.75rem;
-      color: #1e3a4e;
+      color: #2a1010;
       text-align: center;
+      letter-spacing: 0.1em;
     }
   </style>
 </head>
@@ -227,7 +240,7 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-name">Anthony <span>Gachihi</span></div>
-    <div class="hero-title">&gt; IT_PROFESSIONAL / TARLETON_STATE_UNIVERSITY / FORT_WORTH_TX</div>
+    <div class="hero-title">&gt; IT_PROFESSIONAL / TARLETON_STATE_STUDENT</div>
     <p class="hero-summary">
       Detail-oriented IT professional pursuing a Bachelor's in Information Technology at Tarleton State University,
       with a 4.0 GPA Associate's in Cybersecurity. Experienced in Tier 1 technical support, hardware/software
@@ -295,7 +308,7 @@
     <div class="skills-grid">
       <div class="skill-card">
         <div class="skill-card-title">Operating Systems</div>
-        <p>Windows OS — install, config, troubleshoot. Linux fundamentals, command line navigation.</p>
+        <p>Windows OS — install, config, troubleshoot. Linux fundamentals and command line navigation.</p>
       </div>
       <div class="skill-card">
         <div class="skill-card-title">Hardware</div>
